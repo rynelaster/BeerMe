@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 import GoogleMapReact from 'google-map-react';
+// import PlacesAutocomplete from 'react-places-autocomplete'
+// import { geocodeByAddress, geocodeByPlaceId } from 'react-places-autocomplete'
+import SimpleForm from './autocomplete.js'
 import './map.css'; 
+
 
 
 const request = require('superagent');
@@ -18,9 +22,24 @@ class App extends Component {
     }
   }
 
+  // componentDidMount(){
+      // breweryDB API AJAX call to get locations
+  componentDidMount(){
+    // console.log(request)
+    request
+    .get('http://localhost:9292/locations')
+    // .withCredentials()
+    .end((err, data) => {
+      console.log(err);
+      console.log(data);
+  })
+  
+}
+
     render() {
       return (
         <div className='google-map'>
+        <SimpleForm/>
         <GoogleMapReact yesIWantToUseGoogleMapApiInternals={true} defaultCenter={defaultMapCenter} defaultZoom={ defaultZoom }
              bootstrapURLKeys={{
                    key: 'AIzaSyCcpo5qaMbxdYeCRnWMxm9VvV03INVLxF0',
@@ -35,17 +54,7 @@ class App extends Component {
 }
 
 export default App;
-  // breweryDB API AJAX call to get locations
-  // componentDidMount(){
-  //   console.log(request)
-  //   request
-  //   .get('http://localhost:9292/locations')
-  //   // .withCredentials()
-  //   .end((err, data) => {
-  //     console.log(err);
-  //     console.log(data);
-  //   })
-  // };
+
 
 
 
