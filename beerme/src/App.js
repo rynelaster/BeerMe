@@ -18,7 +18,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-
+      value: []
     }
   }
 
@@ -27,11 +27,42 @@ class App extends Component {
   componentDidMount(){
     // console.log(request)
     request
-    .get('http://localhost:9292/locations')
+    .get('http://localhost:9292/unitedstates')
     // .withCredentials()
     .end((err, data) => {
-      console.log(err);
-      console.log(data);
+      
+      let parsedData = JSON.parse(data.text);
+
+      let breweries = parsedData.data;
+
+      breweries.map((brewery,index)=>{
+        console.log(brewery.latitude)
+      })
+      breweries.map((brewery,index)=>{
+        console.log(brewery.longitude)
+      })
+
+      // for (let i = 0; i < data.text.length; i++){
+      //   console.log(data.text[i])  
+      // }
+      // for (let brewery in data.text){
+      //   console.log(brewery.id)
+      // }
+      // // data.map((brewery, index)=>{
+      // //   console.log(brewery)
+      // // })
+      // let test = data.text;
+      // this.setState({value: test})
+      // test.forEach(()=>{
+      //   console.log('worked')
+      // })
+      // test.map((brewery,index)=>{
+      //   console.log(brewery)
+      // })
+      
+      // console.log(err);
+      // console.log(data);
+      
   })
   
 }
@@ -39,15 +70,8 @@ class App extends Component {
     render() {
       return (
         <div className='google-map'>
-        <SimpleForm/>
-        <GoogleMapReact yesIWantToUseGoogleMapApiInternals={true} defaultCenter={defaultMapCenter} defaultZoom={ defaultZoom }
-             bootstrapURLKeys={{
-                   key: 'AIzaSyCcpo5qaMbxdYeCRnWMxm9VvV03INVLxF0',
-                   language: 'en'
-                 }}
-         >  
-         {this.state.markers}
-       </GoogleMapReact>
+          
+
        </div>
       )
   }
@@ -61,15 +85,3 @@ export default App;
 
 
 
-  // render() {
-  //   return (
-  //     <div className="App">
-  //         hey i'm a app.js component
-  //     </div>
-  //   );
-  // }
-
-
-// }
-
-// export default App;

@@ -42,7 +42,7 @@
 
 
 
-export default Map;
+// export default Map;
 
 
 // class IncidentMap extends Component {

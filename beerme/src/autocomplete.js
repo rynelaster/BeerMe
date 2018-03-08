@@ -1,6 +1,21 @@
 import React from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
+  // const inputProps = {
+  //   value:    // `value` is required
+  //   onChange: this.state.
+  //   onBlur: () => {
+  //     console.log('blur!')
+  //   },
+  //   type: 'search',
+  //   placeholder: 'Search Cities...',
+  //   autoFocus: true,
+  // };
+
+
+// React Google-Places-Autocomplete code to get the searchbar to render on the map
+
+// NPM install react-places-autocomplete
 class SimpleForm extends React.Component {
   constructor(props) {
     super(props)
