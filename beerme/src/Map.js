@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
-import APIKEY from './config.js';
-// import GoogleMapReact from 'google-map-react';
-import map from './map';
-// import Map from './map'
-// import DrawerMenu from './DrawerMenu'
-// GoogleMapsLoader from
-// const request = require('superagent');
+// import React, { Component } from 'react';
+// import APIKEY from './config.js';
+// // import GoogleMapReact from 'google-map-react';
+// import map from './map';
+// // import Map from './map'
+// // import DrawerMenu from './DrawerMenu'
+// // GoogleMapsLoader from
+// // const request = require('superagent');
 
-const defaultMapCenter = {lat: 41.882059,lng: -87.627815};
-const defaultZoom = 11;
+// const defaultMapCenter = {lat: 41.882059,lng: -87.627815};
+// const defaultZoom = 11;
 
-class Map extends Component {
-  	constructor(){
-	  	super()
-	  	this.state={
-	  		zoom: 11,
+// class Map extends Component {
+//   	constructor(){
+// 	  	super()
+// 	  	this.state={
+// 	  		zoom: 11,
 
-	  	}
-  	}
-	render() {
-	    return(
-	    	<div className="map">
-	      <GoogleMapReact
-	        bootstrapURLKeys={{ key: APIKEY }}
-	        defaultCenter={defaultMapCenter}
-	        defaultZoom={defaultZoom}
-	      >
+// 	  	}
+//   	}
+// 	render() {
+// 	    return(
+// 	    	<div className="map">
+// 	      <GoogleMapReact
+// 	        bootstrapURLKeys={{ key: APIKEY }}
+// 	        defaultCenter={defaultMapCenter}
+// 	        defaultZoom={defaultZoom}
+// 	      >
 
-	      </GoogleMapReact>
-	      </div>
-	    )
-  	}
-};
+// 	      </GoogleMapReact>
+// 	      </div>
+// 	    )
+//   	}
+// };
 
 
 
