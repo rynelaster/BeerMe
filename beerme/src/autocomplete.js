@@ -3,7 +3,7 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 
   // const inputProps = {
   //   value:    // `value` is required
-  //   onChange: this.state.
+  //   onChange: //
   //   onBlur: () => {
   //     console.log('blur!')
   //   },
@@ -15,21 +15,29 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 
 // React Google-Places-Autocomplete code to get the searchbar to render on the map
 
-// NPM install react-places-autocomplete
+// NPM install react-p
 class SimpleForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { address: 'San Francisco, CA' }
-    this.onChange = (address) => this.setState({ address })
+    this.state = { address: 'Chicago, IL' }
+    this.onChange = (address) => {
+      this.setState({ address })
+    }
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault()
 
-    geocodeByAddress(this.state.address)
+    let newSearch = geocodeByAddress(this.state.address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
+      .then(latLng => {
+        this.props.changeCity(latLng);
+        this.props.breweryCity(this.state.address)
+      })
       .catch(error => console.error('Error', error))
+
+      
+      console.log(newSearch)
   }
 
   render() {
