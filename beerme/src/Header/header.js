@@ -6,7 +6,7 @@ class Header1 extends Component {
   render() {
     return (
     	<div>
-    		<div id='header'>BeerMe!</div>
+    		<div id='header'><span id="logo">Blind-BeerMe!</span></div>
     	</div>
 
 		);

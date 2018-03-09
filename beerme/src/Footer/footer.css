@@ -1,0 +1,9 @@
+#footer{
+	height: 100px;
+	font-size: 3.8em;
+	font-family: 'Butcherman', cursive;
+	text-align: center;
+	background: linear-gradient(yellow, gold);
+	color: white;
+	/*background-image: "./src/header.jpg"*/
+}
