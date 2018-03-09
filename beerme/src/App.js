@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react'
 import SimpleForm from './autocomplete.js'
 import './map.css'; 
+import Footer1 from './Footer/footer.js'
+import Header1 from './Header/header.js'
 
 const request = require('superagent');
 const defaultZoom = 11;
@@ -106,6 +108,7 @@ class App extends Component {
     }
       return (
         <div className='google-map'>
+        <Header1/>
         <SimpleForm changeCity={this.changeCity} breweryCity={this.breweryCity}/>
         <GoogleMapReact yesIWantToUseGoogleMapApiInternals={true} center={this.state.center} defaultCenter={this.state.defaultMapCenter} defaultZoom={ defaultZoom }
              bootstrapURLKeys={{
@@ -120,6 +123,7 @@ class App extends Component {
          >  
          {this.state.markers}
        </GoogleMapReact>
+       <Footer1/>
        </div>
       )
   }
